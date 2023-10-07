@@ -1,0 +1,6 @@
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Dominio\bin\Debug\Dominio.dll
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Dominio\bin\Debug\Dominio.pdb
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Dominio\obj\Debug\Dominio.dll
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Dominio\obj\Debug\Dominio.pdb

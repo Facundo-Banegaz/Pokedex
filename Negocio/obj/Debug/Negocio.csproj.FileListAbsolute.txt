@@ -1,0 +1,9 @@
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\bin\Debug\Negocio.dll
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\bin\Debug\Negocio.pdb
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\bin\Debug\Dominio.dll
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\bin\Debug\Dominio.pdb
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\obj\Debug\Negocio.dll
+C:\Users\baneg\source\repos\WindowsFormsPrimeraLecturaDBPágina\Negocio\obj\Debug\Negocio.pdb
