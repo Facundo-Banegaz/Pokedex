@@ -50,7 +50,7 @@
             this.lbl_debilidad.AutoSize = true;
             this.lbl_debilidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_debilidad.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_debilidad.Location = new System.Drawing.Point(106, 314);
+            this.lbl_debilidad.Location = new System.Drawing.Point(132, 308);
             this.lbl_debilidad.Name = "lbl_debilidad";
             this.lbl_debilidad.Size = new System.Drawing.Size(111, 31);
             this.lbl_debilidad.TabIndex = 1;
@@ -61,7 +61,7 @@
             this.lbl_numero.AutoSize = true;
             this.lbl_numero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_numero.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numero.Location = new System.Drawing.Point(106, 128);
+            this.lbl_numero.Location = new System.Drawing.Point(132, 122);
             this.lbl_numero.Name = "lbl_numero";
             this.lbl_numero.Size = new System.Drawing.Size(98, 31);
             this.lbl_numero.TabIndex = 3;
@@ -72,7 +72,7 @@
             this.lbl_descripcion.AutoSize = true;
             this.lbl_descripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_descripcion.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_descripcion.Location = new System.Drawing.Point(106, 433);
+            this.lbl_descripcion.Location = new System.Drawing.Point(132, 427);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(138, 31);
             this.lbl_descripcion.TabIndex = 4;
@@ -83,7 +83,7 @@
             this.lbl_tipo.AutoSize = true;
             this.lbl_tipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_tipo.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipo.Location = new System.Drawing.Point(106, 251);
+            this.lbl_tipo.Location = new System.Drawing.Point(132, 245);
             this.lbl_tipo.Name = "lbl_tipo";
             this.lbl_tipo.Size = new System.Drawing.Size(61, 31);
             this.lbl_tipo.TabIndex = 5;
@@ -94,7 +94,7 @@
             this.lbl_nombre.AutoSize = true;
             this.lbl_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_nombre.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.Location = new System.Drawing.Point(107, 181);
+            this.lbl_nombre.Location = new System.Drawing.Point(133, 175);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(97, 31);
             this.lbl_nombre.TabIndex = 6;
@@ -103,7 +103,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(256, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(282, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(404, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,7 +112,7 @@
             // 
             // pbx_img
             // 
-            this.pbx_img.Location = new System.Drawing.Point(361, 102);
+            this.pbx_img.Location = new System.Drawing.Point(387, 96);
             this.pbx_img.Name = "pbx_img";
             this.pbx_img.Size = new System.Drawing.Size(474, 372);
             this.pbx_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,7 +125,7 @@
             this.lbl_mostrar_numero.BackColor = System.Drawing.Color.Yellow;
             this.lbl_mostrar_numero.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_mostrar_numero.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbl_mostrar_numero.Location = new System.Drawing.Point(261, 133);
+            this.lbl_mostrar_numero.Location = new System.Drawing.Point(287, 127);
             this.lbl_mostrar_numero.Name = "lbl_mostrar_numero";
             this.lbl_mostrar_numero.Padding = new System.Windows.Forms.Padding(4);
             this.lbl_mostrar_numero.Size = new System.Drawing.Size(8, 35);
@@ -137,7 +137,7 @@
             this.lbl_mostrar_nombre.BackColor = System.Drawing.Color.Yellow;
             this.lbl_mostrar_nombre.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_mostrar_nombre.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbl_mostrar_nombre.Location = new System.Drawing.Point(262, 181);
+            this.lbl_mostrar_nombre.Location = new System.Drawing.Point(288, 175);
             this.lbl_mostrar_nombre.Name = "lbl_mostrar_nombre";
             this.lbl_mostrar_nombre.Padding = new System.Windows.Forms.Padding(4);
             this.lbl_mostrar_nombre.Size = new System.Drawing.Size(8, 35);
@@ -152,7 +152,7 @@
             this.txt_mostrar_descripcion.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mostrar_descripcion.ForeColor = System.Drawing.Color.Black;
             this.txt_mostrar_descripcion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_mostrar_descripcion.Location = new System.Drawing.Point(111, 480);
+            this.txt_mostrar_descripcion.Location = new System.Drawing.Point(137, 474);
             this.txt_mostrar_descripcion.Multiline = true;
             this.txt_mostrar_descripcion.Name = "txt_mostrar_descripcion";
             this.txt_mostrar_descripcion.ReadOnly = true;
@@ -165,7 +165,7 @@
             this.lbl_mostrar_tipo.BackColor = System.Drawing.Color.Yellow;
             this.lbl_mostrar_tipo.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_mostrar_tipo.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbl_mostrar_tipo.Location = new System.Drawing.Point(261, 255);
+            this.lbl_mostrar_tipo.Location = new System.Drawing.Point(287, 249);
             this.lbl_mostrar_tipo.Name = "lbl_mostrar_tipo";
             this.lbl_mostrar_tipo.Padding = new System.Windows.Forms.Padding(4);
             this.lbl_mostrar_tipo.Size = new System.Drawing.Size(8, 35);
@@ -177,7 +177,7 @@
             this.lbl_mostrar_debilidad.BackColor = System.Drawing.Color.Yellow;
             this.lbl_mostrar_debilidad.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_mostrar_debilidad.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbl_mostrar_debilidad.Location = new System.Drawing.Point(263, 314);
+            this.lbl_mostrar_debilidad.Location = new System.Drawing.Point(289, 308);
             this.lbl_mostrar_debilidad.Name = "lbl_mostrar_debilidad";
             this.lbl_mostrar_debilidad.Padding = new System.Windows.Forms.Padding(4);
             this.lbl_mostrar_debilidad.Size = new System.Drawing.Size(8, 35);
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 711);
+            this.ClientSize = new System.Drawing.Size(1024, 711);
             this.Controls.Add(this.lbl_mostrar_debilidad);
             this.Controls.Add(this.lbl_mostrar_tipo);
             this.Controls.Add(this.txt_mostrar_descripcion);
