@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Dominio",
-    "\\Negocio"
+    "\\Negocio",
+    "\\WindowsFormsPrimeraLecturaDBPágina"
   ],
-  "SelectedNode": "\\Negocio\\ElementoNegocio.cs",
+  "SelectedNode": "\\WindowsFormsPrimeraLecturaDBPágina\\FrmDetalle.cs",
   "PreviewInSolutionExplorer": false
 }
