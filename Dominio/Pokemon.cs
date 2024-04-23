@@ -12,8 +12,8 @@ namespace Dominio
         //atributos y los encapsulo
 
         public int Id { get; set; }
-        [DisplayName("Número")]
-        public int Numero { get; set; }
+        [DisplayName("Codigo")]
+        public string Codigo { get; set; }
         public string Nombre { get; set; }
         [DisplayName("Descripción")]
         public string Descripcion { get; set; }

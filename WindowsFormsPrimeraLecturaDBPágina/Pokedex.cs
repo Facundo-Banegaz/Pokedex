@@ -27,7 +27,7 @@ namespace WindowsFormsPrimeraLecturaDBPágina
         private void Pokedex_Load(object sender, EventArgs e)
         {
             cargar();
-            cbo_campo.Items.Add("Número");
+            cbo_campo.Items.Add("Id");
             cbo_campo.Items.Add("Nombre");
             cbo_campo.Items.Add("Descripción");
         }
@@ -73,8 +73,7 @@ namespace WindowsFormsPrimeraLecturaDBPágina
                 listarPokemon = negocio.ListarPokemon();
 
                 dgv_pokemon.DataSource = listarPokemon;
-                //dgv_pokemon.Columns["UrlImagen"].Visible = false;
-                //dgv_pokemon.Columns["Id"].Visible = false;
+
                 ocultarColumnas();
 
                 cargarImg(listarPokemon[0].UrlImagen);
@@ -103,27 +102,55 @@ namespace WindowsFormsPrimeraLecturaDBPágina
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            //siguiente Ventana pasar por parametro el obj
+            // Verificar si hay una fila seleccionada
+            if (dgv_pokemon.CurrentRow != null)
+            {
+                Pokemon pokemonSeleccionado;
 
-            Pokemon pokemonSeleccionado;
+                pokemonSeleccionado = (Pokemon)dgv_pokemon.CurrentRow.DataBoundItem;
+                FrmAgregar modificar = new FrmAgregar(pokemonSeleccionado);
 
-            pokemonSeleccionado = (Pokemon)dgv_pokemon.CurrentRow.DataBoundItem;
-            FrmAgregar modificar = new FrmAgregar(pokemonSeleccionado);
+                modificar.ShowDialog();
 
-            modificar.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                // Si no hay ninguna fila seleccionada, mostrar un mensaje o manejar el caso de alguna otra manera
+                MessageBox.Show("No hay ningún Pokémon seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            cargar();
+
         }
 
         private void btn_suspender_Click(object sender, EventArgs e)
         {
-            Eliminar(true);
+
+            // Verificar si hay una fila seleccionada
+            if (dgv_pokemon.CurrentRow != null)
+            {
+                Eliminar(true);
+            }
+            else
+            {
+                // Si no hay ninguna fila seleccionada, mostrar un mensaje o manejar el caso de alguna otra manera
+                MessageBox.Show("No hay ningún Pokémon seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-
-            Eliminar(false);
+            // Verificar si hay una fila seleccionada
+            if (dgv_pokemon.CurrentRow != null)
+            {
+                Eliminar(false);
+            }
+            else
+            {
+                // Si no hay ninguna fila seleccionada, mostrar un mensaje o manejar el caso de alguna otra manera
+                MessageBox.Show("No hay ningún Pokémon seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -172,7 +199,6 @@ namespace WindowsFormsPrimeraLecturaDBPágina
         private void ocultarColumnas()
         {
             dgv_pokemon.Columns["UrlImagen"].Visible = false;
-            dgv_pokemon.Columns["Id"].Visible = false;
         }
 
         private void txt_filtro_TextChanged(object sender, EventArgs e)
@@ -203,7 +229,7 @@ namespace WindowsFormsPrimeraLecturaDBPágina
         {
             string opcion = cbo_campo.SelectedItem.ToString();
 
-            if (opcion == "Número")
+            if (opcion == "Id")
             {
                 cbo_criterio.Items.Clear();
                 cbo_criterio.Items.Add("Mayor a");
@@ -298,22 +324,28 @@ namespace WindowsFormsPrimeraLecturaDBPágina
 
         private void btn_detalle_Click(object sender, EventArgs e)
         {
-            //siguiente Ventana pasar por parametro el obj
+            // Verificar si hay una fila seleccionada
+            if (dgv_pokemon.CurrentRow != null)
+            {
+                // Si hay una fila seleccionada, obtener el Pokemon seleccionado
+                Pokemon pokemonSeleccionado = (Pokemon)dgv_pokemon.CurrentRow.DataBoundItem;
 
-            Pokemon pokemonSeleccionado;
+                // Crear la ventana de detalle y pasar el Pokemon seleccionado como parámetro
+                FrmDetalle detalle = new FrmDetalle(pokemonSeleccionado);
 
-            //selecciono el pokemon de la tabla
-            pokemonSeleccionado = (Pokemon)dgv_pokemon.CurrentRow.DataBoundItem;
+                // Mostrar la ventana de detalle
+                detalle.ShowDialog();
 
-
-
-            FrmDetalle detalle = new FrmDetalle(pokemonSeleccionado);
-
-            detalle.ShowDialog();
-
-            cargar();
-
+                // Recargar los datos después de cerrar la ventana de detalle
+                cargar();
+            }
+            else
+            {
+                // Si no hay ninguna fila seleccionada, mostrar un mensaje o manejar el caso de alguna otra manera
+                MessageBox.Show("No hay ningún Pokémon seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btn_todo_Click(object sender, EventArgs e)
         {

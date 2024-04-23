@@ -39,8 +39,8 @@ namespace WindowsFormsPrimeraLecturaDBPágina
             
             try
             {
-
-                lbl_mostrar_numero.Text = pokemon.Numero.ToString();
+                lbl_mostrar_Id.Text =pokemon.Id.ToString();
+                lbl_mostrar_codigo.Text = pokemon.Codigo;
                 lbl_mostrar_nombre.Text = pokemon.Nombre;
                 txt_mostrar_descripcion.Text = pokemon.Descripcion.ToString();
                 lbl_mostrar_debilidad.Text = pokemon.Debilidad.ToString();  
@@ -80,7 +80,5 @@ namespace WindowsFormsPrimeraLecturaDBPágina
             cargar();
 
         }
-
-
     }
 }

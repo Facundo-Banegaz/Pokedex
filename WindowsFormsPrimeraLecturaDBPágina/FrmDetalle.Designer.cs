@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetalle));
             this.lbl_debilidad = new System.Windows.Forms.Label();
-            this.lbl_numero = new System.Windows.Forms.Label();
+            this.lbl_Codigo = new System.Windows.Forms.Label();
             this.lbl_descripcion = new System.Windows.Forms.Label();
             this.lbl_tipo = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbx_img = new System.Windows.Forms.PictureBox();
-            this.lbl_mostrar_numero = new System.Windows.Forms.Label();
+            this.lbl_mostrar_codigo = new System.Windows.Forms.Label();
             this.lbl_mostrar_nombre = new System.Windows.Forms.Label();
             this.txt_mostrar_descripcion = new System.Windows.Forms.TextBox();
             this.lbl_mostrar_tipo = new System.Windows.Forms.Label();
             this.lbl_mostrar_debilidad = new System.Windows.Forms.Label();
+            this.lbl_mostrar_Id = new System.Windows.Forms.Label();
+            this.lbl_Id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
             this.SuspendLayout();
@@ -56,16 +58,16 @@
             this.lbl_debilidad.TabIndex = 1;
             this.lbl_debilidad.Text = "Debilidad:";
             // 
-            // lbl_numero
+            // lbl_Codigo
             // 
-            this.lbl_numero.AutoSize = true;
-            this.lbl_numero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_numero.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numero.Location = new System.Drawing.Point(132, 122);
-            this.lbl_numero.Name = "lbl_numero";
-            this.lbl_numero.Size = new System.Drawing.Size(98, 31);
-            this.lbl_numero.TabIndex = 3;
-            this.lbl_numero.Text = "Numero:";
+            this.lbl_Codigo.AutoSize = true;
+            this.lbl_Codigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Codigo.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Codigo.Location = new System.Drawing.Point(132, 122);
+            this.lbl_Codigo.Name = "lbl_Codigo";
+            this.lbl_Codigo.Size = new System.Drawing.Size(87, 31);
+            this.lbl_Codigo.TabIndex = 3;
+            this.lbl_Codigo.Text = "Codigo:";
             // 
             // lbl_descripcion
             // 
@@ -119,17 +121,17 @@
             this.pbx_img.TabIndex = 12;
             this.pbx_img.TabStop = false;
             // 
-            // lbl_mostrar_numero
+            // lbl_mostrar_codigo
             // 
-            this.lbl_mostrar_numero.AutoSize = true;
-            this.lbl_mostrar_numero.BackColor = System.Drawing.Color.Yellow;
-            this.lbl_mostrar_numero.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mostrar_numero.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbl_mostrar_numero.Location = new System.Drawing.Point(287, 127);
-            this.lbl_mostrar_numero.Name = "lbl_mostrar_numero";
-            this.lbl_mostrar_numero.Padding = new System.Windows.Forms.Padding(4);
-            this.lbl_mostrar_numero.Size = new System.Drawing.Size(8, 35);
-            this.lbl_mostrar_numero.TabIndex = 13;
+            this.lbl_mostrar_codigo.AutoSize = true;
+            this.lbl_mostrar_codigo.BackColor = System.Drawing.Color.Yellow;
+            this.lbl_mostrar_codigo.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mostrar_codigo.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lbl_mostrar_codigo.Location = new System.Drawing.Point(287, 127);
+            this.lbl_mostrar_codigo.Name = "lbl_mostrar_codigo";
+            this.lbl_mostrar_codigo.Padding = new System.Windows.Forms.Padding(4);
+            this.lbl_mostrar_codigo.Size = new System.Drawing.Size(8, 35);
+            this.lbl_mostrar_codigo.TabIndex = 13;
             // 
             // lbl_mostrar_nombre
             // 
@@ -183,20 +185,45 @@
             this.lbl_mostrar_debilidad.Size = new System.Drawing.Size(8, 35);
             this.lbl_mostrar_debilidad.TabIndex = 22;
             // 
+            // lbl_mostrar_Id
+            // 
+            this.lbl_mostrar_Id.AutoSize = true;
+            this.lbl_mostrar_Id.BackColor = System.Drawing.Color.Yellow;
+            this.lbl_mostrar_Id.Font = new System.Drawing.Font("Impact", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mostrar_Id.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lbl_mostrar_Id.Location = new System.Drawing.Point(96, 11);
+            this.lbl_mostrar_Id.Name = "lbl_mostrar_Id";
+            this.lbl_mostrar_Id.Padding = new System.Windows.Forms.Padding(4);
+            this.lbl_mostrar_Id.Size = new System.Drawing.Size(8, 35);
+            this.lbl_mostrar_Id.TabIndex = 24;
+            // 
+            // lbl_Id
+            // 
+            this.lbl_Id.AutoSize = true;
+            this.lbl_Id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_Id.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Id.Location = new System.Drawing.Point(12, 9);
+            this.lbl_Id.Name = "lbl_Id";
+            this.lbl_Id.Size = new System.Drawing.Size(39, 31);
+            this.lbl_Id.TabIndex = 23;
+            this.lbl_Id.Text = "Id:";
+            // 
             // FrmDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 711);
+            this.Controls.Add(this.lbl_mostrar_Id);
+            this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.lbl_mostrar_debilidad);
             this.Controls.Add(this.lbl_mostrar_tipo);
             this.Controls.Add(this.txt_mostrar_descripcion);
             this.Controls.Add(this.lbl_mostrar_nombre);
-            this.Controls.Add(this.lbl_mostrar_numero);
+            this.Controls.Add(this.lbl_mostrar_codigo);
             this.Controls.Add(this.pbx_img);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_debilidad);
-            this.Controls.Add(this.lbl_numero);
+            this.Controls.Add(this.lbl_Codigo);
             this.Controls.Add(this.lbl_descripcion);
             this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.lbl_nombre);
@@ -215,16 +242,18 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_debilidad;
-        private System.Windows.Forms.Label lbl_numero;
+        private System.Windows.Forms.Label lbl_Codigo;
         private System.Windows.Forms.Label lbl_descripcion;
         private System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbx_img;
-        private System.Windows.Forms.Label lbl_mostrar_numero;
+        private System.Windows.Forms.Label lbl_mostrar_codigo;
         private System.Windows.Forms.Label lbl_mostrar_nombre;
         private System.Windows.Forms.TextBox txt_mostrar_descripcion;
         private System.Windows.Forms.Label lbl_mostrar_tipo;
         private System.Windows.Forms.Label lbl_mostrar_debilidad;
+        private System.Windows.Forms.Label lbl_mostrar_Id;
+        private System.Windows.Forms.Label lbl_Id;
     }
 }

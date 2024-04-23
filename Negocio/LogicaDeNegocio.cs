@@ -32,7 +32,7 @@ namespace Negocio
                 Conexion.ConnectionString = "server=.\\SQLEXPRESS; database=Pokemon; integrated security=true";
 
                 Comando.CommandType= System.Data.CommandType.Text;
-                Comando.CommandText = "Select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And P.Activo = 1";
+                Comando.CommandText = "Select P.Id, P.Codigo, P.Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And P.Activo = 1";
 
                 Comando.Connection = Conexion;
 
@@ -58,7 +58,7 @@ namespace Negocio
                     //                              0       1         2
 
                     aux.Id = (int)lector["Id"];
-                    aux.Numero = (int)lector["Numero"];
+                    aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     //validar que el dato no sea vacio
@@ -103,8 +103,11 @@ namespace Negocio
             AccesoDatos accesoDatos = new AccesoDatos();
             try
             {
-                accesoDatos.setearConsulta("Insert into POKEMONS (Numero, Nombre, Descripcion, Activo,IdTipo,IdDebilidad,UrlImagen)values(" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1,@IdTipo,@IdDebilidad,@UrlImagen)");
+                accesoDatos.setearConsulta("Insert into POKEMONS (Codigo, Nombre, Descripcion, Activo,IdTipo,IdDebilidad,UrlImagen)values(@Codigo,@Nombre,@Descripcion, 1,@IdTipo,@IdDebilidad,@UrlImagen)");
                 //manera de inyectar una parametro en una consulta
+                accesoDatos.setearParametro("@Codigo", nuevo.Codigo);
+                accesoDatos.setearParametro("@Nombre", nuevo.Nombre);
+                accesoDatos.setearParametro("@Descripcion", nuevo.Descripcion);
                 accesoDatos.setearParametro("@IdTipo",nuevo.Tipo.Id);
                 accesoDatos.setearParametro("@IdDebilidad", nuevo.Debilidad.Id);
                 accesoDatos.setearParametro("@UrlImagen", nuevo.UrlImagen);
@@ -126,14 +129,14 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update POKEMONS set Numero = @numero, Nombre = @nombre, Descripcion = @desc, UrlImagen = @img, IdTipo = @idTipo, IdDebilidad = @idDebilidad Where Id = @id");
-                datos.setearParametro("@numero", modificar.Numero);
-                datos.setearParametro("@nombre", modificar.Nombre);
-                datos.setearParametro("@desc", modificar.Descripcion);
-                datos.setearParametro("@img", modificar.UrlImagen);
+                datos.setearConsulta("update POKEMONS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, UrlImagen = @UrlImagen, IdTipo = @idTipo, IdDebilidad = @idDebilidad Where Id = @Id");
+                datos.setearParametro("@Id", modificar.Id);
+                datos.setearParametro("@Codigo", modificar.Codigo);
+                datos.setearParametro("@Nombre", modificar.Nombre);
+                datos.setearParametro("@Descripcion", modificar.Descripcion);
+                datos.setearParametro("@UrlImagen", modificar.UrlImagen);
                 datos.setearParametro("@idTipo", modificar.Tipo.Id);
                 datos.setearParametro("@idDebilidad", modificar.Debilidad.Id);
-                datos.setearParametro("@id", modificar.Id);
 
                 datos.ejecutarAccion();
             }
@@ -144,13 +147,13 @@ namespace Negocio
             }
         }
 
-        public void Suspender(int id)
+        public void Suspender(int Id)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update  pokemons set activo = 0  where id =@id");
-                datos.setearParametro("@id", id);
+                datos.setearConsulta("update  pokemons set activo = 0  where Id =@Id");
+                datos.setearParametro("@Id", Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -159,13 +162,13 @@ namespace Negocio
                 throw ex;
             }
         }
-        public void Eliminar(int id)
+        public void Eliminar(int Id)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Delete from pokemons where id =@id");
-                datos.setearParametro("@id",id);
+                datos.setearConsulta("Delete from pokemons where Id =@Id");
+                datos.setearParametro("@Id",Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -176,15 +179,13 @@ namespace Negocio
         }
         public void MostrarDetalle(Pokemon detalle)
         {
-            /*
-             Select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And P.Activo = 1 and p.Numero = @Numero;"
-             */
+
 
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And P.Activo = 1 and p.Numero = @Numero;");
-                datos.setearParametro("@numero", detalle.Numero);
+                datos.setearConsulta("Select P.Id, P.Codigo, P.Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And P.Activo = 1 and P.Id = @Id;");
+                datos.setearParametro("@Id", detalle.Id);
 
                 datos.ejecutarAccion();
             }
@@ -206,22 +207,22 @@ namespace Negocio
 
             try
             {
-                string consulta = "Select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And P.Activo = 1 And ";
+                string consulta = "Select P.Id, P.Codigo, P.Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And P.Activo = 1 And ";
 
-                if (campo == "Número")
+                if (campo == "Id")
                 {
                     switch (criterio)
                     {
                         case "Mayor a":
-                            consulta += "Numero > " + filtro;
+                            consulta += "P.Id > " + filtro;
                             break;
 
                         case "Menor a":
-                            consulta += "Numero < " + filtro;
+                            consulta += "P.Id < " + filtro;
                             break;
 
                         default:
-                            consulta += "Numero = " + filtro;
+                            consulta += "P.Id = " + filtro;
                             break;
                     }
 
@@ -275,7 +276,7 @@ namespace Negocio
                        
 
                     aux.Id = (int)accesoDatos.Lector["Id"];
-                    aux.Numero = (int)accesoDatos.Lector["Numero"];
+                    aux.Codigo = (string)accesoDatos.Lector["Codigo"];
                     aux.Nombre = (string)accesoDatos.Lector["Nombre"];
                     aux.Descripcion = (string)accesoDatos.Lector["Descripcion"];
 

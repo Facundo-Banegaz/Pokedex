@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregar));
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.lbl_nombre = new System.Windows.Forms.Label();
@@ -45,7 +46,11 @@
             this.cbo_debilidad = new System.Windows.Forms.ComboBox();
             this.btn_agregar_img = new System.Windows.Forms.Button();
             this.txt_numero = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.gbx_campos = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.gbx_campos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_aceptar
@@ -65,7 +70,7 @@
             // 
             this.lbl_nombre.AutoSize = true;
             this.lbl_nombre.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.Location = new System.Drawing.Point(34, 125);
+            this.lbl_nombre.Location = new System.Drawing.Point(20, 113);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(79, 25);
             this.lbl_nombre.TabIndex = 0;
@@ -73,7 +78,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(173, 127);
+            this.txt_nombre.Location = new System.Drawing.Point(159, 115);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(267, 26);
             this.txt_nombre.TabIndex = 2;
@@ -104,7 +109,7 @@
             // 
             this.lbl_tipo.AutoSize = true;
             this.lbl_tipo.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipo.Location = new System.Drawing.Point(38, 342);
+            this.lbl_tipo.Location = new System.Drawing.Point(24, 330);
             this.lbl_tipo.Name = "lbl_tipo";
             this.lbl_tipo.Size = new System.Drawing.Size(50, 25);
             this.lbl_tipo.TabIndex = 0;
@@ -112,7 +117,7 @@
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(173, 188);
+            this.txt_descripcion.Location = new System.Drawing.Point(159, 176);
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(267, 121);
@@ -122,7 +127,7 @@
             // 
             this.lbl_descripcion.AutoSize = true;
             this.lbl_descripcion.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_descripcion.Location = new System.Drawing.Point(34, 208);
+            this.lbl_descripcion.Location = new System.Drawing.Point(20, 196);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(113, 25);
             this.lbl_descripcion.TabIndex = 0;
@@ -132,17 +137,17 @@
             // 
             this.lbl_numero.AutoSize = true;
             this.lbl_numero.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numero.Location = new System.Drawing.Point(34, 67);
+            this.lbl_numero.Location = new System.Drawing.Point(20, 55);
             this.lbl_numero.Name = "lbl_numero";
-            this.lbl_numero.Size = new System.Drawing.Size(79, 25);
+            this.lbl_numero.Size = new System.Drawing.Size(72, 25);
             this.lbl_numero.TabIndex = 0;
-            this.lbl_numero.Text = "Numero:";
+            this.lbl_numero.Text = "Codigo:";
             // 
             // lbl_debilidad
             // 
             this.lbl_debilidad.AutoSize = true;
             this.lbl_debilidad.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_debilidad.Location = new System.Drawing.Point(34, 428);
+            this.lbl_debilidad.Location = new System.Drawing.Point(20, 416);
             this.lbl_debilidad.Name = "lbl_debilidad";
             this.lbl_debilidad.Size = new System.Drawing.Size(88, 25);
             this.lbl_debilidad.TabIndex = 0;
@@ -150,7 +155,7 @@
             // 
             // txt_Img
             // 
-            this.txt_Img.Location = new System.Drawing.Point(173, 532);
+            this.txt_Img.Location = new System.Drawing.Point(159, 520);
             this.txt_Img.Name = "txt_Img";
             this.txt_Img.Size = new System.Drawing.Size(267, 26);
             this.txt_Img.TabIndex = 2;
@@ -160,7 +165,7 @@
             // 
             this.lbl_img.AutoSize = true;
             this.lbl_img.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_img.Location = new System.Drawing.Point(34, 530);
+            this.lbl_img.Location = new System.Drawing.Point(20, 518);
             this.lbl_img.Name = "lbl_img";
             this.lbl_img.Size = new System.Drawing.Size(104, 25);
             this.lbl_img.TabIndex = 0;
@@ -170,7 +175,7 @@
             // 
             this.cbo_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_tipo.FormattingEnabled = true;
-            this.cbo_tipo.Location = new System.Drawing.Point(173, 344);
+            this.cbo_tipo.Location = new System.Drawing.Point(159, 332);
             this.cbo_tipo.Name = "cbo_tipo";
             this.cbo_tipo.Size = new System.Drawing.Size(267, 28);
             this.cbo_tipo.TabIndex = 4;
@@ -179,7 +184,7 @@
             // 
             this.cbo_debilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_debilidad.FormattingEnabled = true;
-            this.cbo_debilidad.Location = new System.Drawing.Point(173, 430);
+            this.cbo_debilidad.Location = new System.Drawing.Point(159, 418);
             this.cbo_debilidad.Name = "cbo_debilidad";
             this.cbo_debilidad.Size = new System.Drawing.Size(267, 28);
             this.cbo_debilidad.TabIndex = 5;
@@ -198,31 +203,45 @@
             // 
             // txt_numero
             // 
-            this.txt_numero.Location = new System.Drawing.Point(173, 69);
+            this.txt_numero.Location = new System.Drawing.Point(159, 57);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(267, 26);
             this.txt_numero.TabIndex = 21;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // gbx_campos
+            // 
+            this.gbx_campos.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.gbx_campos.Controls.Add(this.txt_Img);
+            this.gbx_campos.Controls.Add(this.txt_numero);
+            this.gbx_campos.Controls.Add(this.lbl_nombre);
+            this.gbx_campos.Controls.Add(this.txt_nombre);
+            this.gbx_campos.Controls.Add(this.cbo_debilidad);
+            this.gbx_campos.Controls.Add(this.lbl_tipo);
+            this.gbx_campos.Controls.Add(this.cbo_tipo);
+            this.gbx_campos.Controls.Add(this.lbl_descripcion);
+            this.gbx_campos.Controls.Add(this.lbl_debilidad);
+            this.gbx_campos.Controls.Add(this.txt_descripcion);
+            this.gbx_campos.Controls.Add(this.lbl_numero);
+            this.gbx_campos.Controls.Add(this.lbl_img);
+            this.gbx_campos.Location = new System.Drawing.Point(4, 12);
+            this.gbx_campos.Name = "gbx_campos";
+            this.gbx_campos.Size = new System.Drawing.Size(477, 570);
+            this.gbx_campos.TabIndex = 22;
+            this.gbx_campos.TabStop = false;
             // 
             // FrmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 703);
-            this.Controls.Add(this.txt_numero);
+            this.Controls.Add(this.gbx_campos);
             this.Controls.Add(this.btn_agregar_img);
-            this.Controls.Add(this.cbo_debilidad);
-            this.Controls.Add(this.cbo_tipo);
-            this.Controls.Add(this.lbl_debilidad);
-            this.Controls.Add(this.txt_Img);
-            this.Controls.Add(this.lbl_img);
-            this.Controls.Add(this.lbl_numero);
-            this.Controls.Add(this.txt_descripcion);
-            this.Controls.Add(this.lbl_descripcion);
-            this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.pbx_img);
-            this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.btn_aceptar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAgregar";
@@ -230,8 +249,10 @@
             this.Text = "Agregar Nuevo Pokemon";
             this.Load += new System.EventHandler(this.FrmAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.gbx_campos.ResumeLayout(false);
+            this.gbx_campos.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -253,5 +274,7 @@
         private System.Windows.Forms.ComboBox cbo_debilidad;
         private System.Windows.Forms.Button btn_agregar_img;
         private System.Windows.Forms.TextBox txt_numero;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.GroupBox gbx_campos;
     }
 }

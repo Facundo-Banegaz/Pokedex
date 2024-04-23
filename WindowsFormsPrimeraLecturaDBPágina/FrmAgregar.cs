@@ -23,58 +23,73 @@ namespace WindowsFormsPrimeraLecturaDBPágina
         {
             InitializeComponent();
         }
+
         
         public FrmAgregar( Pokemon pokemon)
         {
             InitializeComponent();
-            this.Pokemon = pokemon;
+            this.Pokemon = pokemon; 
             Text = "Modificar Pokemon";
         }
+
+
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_aceptar_Click(object sender, EventArgs e)
+        private void GuardarPokemon()
         {
 
-            
             LogicaDeNegocio logicaDeNegocio = new LogicaDeNegocio();
-            try 
-               
-            {
-                if(Pokemon ==null)
-                    Pokemon = new Pokemon();
-                
-                Pokemon.Numero = int.Parse(txt_numero.Text);
-                Pokemon.Nombre= txt_nombre.Text;
-                Pokemon.Descripcion= txt_descripcion.Text;
-                Pokemon.UrlImagen = txt_Img.Text;
-                Pokemon.Tipo = (Elemento)cbo_tipo.SelectedItem;
-                Pokemon.Debilidad = (Elemento)cbo_debilidad.SelectedItem;
+            try
 
-                if (Pokemon.Id != 0)
+            {
+               if(validarcampos())
                 {
-                    logicaDeNegocio.Modificar(Pokemon);
-                    MessageBox.Show("Modificado exitosamente!!!");
+                    if (Pokemon == null)
+                        Pokemon = new Pokemon();
+
+                    Pokemon.Codigo = txt_numero.Text;
+                    Pokemon.Nombre = txt_nombre.Text;
+                    Pokemon.Descripcion = txt_descripcion.Text;
+                    Pokemon.UrlImagen = txt_Img.Text;
+                    Pokemon.Tipo = (Elemento)cbo_tipo.SelectedItem;
+                    Pokemon.Debilidad = (Elemento)cbo_debilidad.SelectedItem;
+
+                    if (Pokemon.Id != 0)
+                    {
+                        logicaDeNegocio.Modificar(Pokemon);
+                        MessageBox.Show("Modificado exitosamente!!!");
+                    }
+                    else
+                    {
+                        logicaDeNegocio.Agregar(Pokemon);
+                        MessageBox.Show("Agregado Exitosamente!!!");
+                    }
+                    //guardar archivo localmente
+                    if (archivo != null && txt_Img.Text.ToUpper().Contains("HTTP"))
+                    {
+                        File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.FileName);
+                    }
+                    limpiarCamposProvider();
+                    limpiarCampos(gbx_campos);
+                    this.Close();
                 }
                 else
                 {
-                    logicaDeNegocio.Agregar(Pokemon);
-                    MessageBox.Show("Agregado Exitosamente!!!");
+                    MessageBox.Show("Debe Completar Todos los Campos!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //guardar archivo localmente
-                if (archivo != null && txt_Img.Text.ToUpper().Contains("HTTP"))
-                {
-                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.FileName);
-                }
-
-                this.Close();
-            } 
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+
+            GuardarPokemon();
         }
 
         private void FrmAgregar_Load(object sender, EventArgs e)
@@ -95,7 +110,7 @@ namespace WindowsFormsPrimeraLecturaDBPágina
 
                 if (Pokemon != null)
                 {
-                    txt_numero.Text = Pokemon.Numero.ToString();
+                    txt_numero.Text = Pokemon.Codigo;
                     txt_nombre.Text = Pokemon.Nombre;
                     txt_descripcion.Text = Pokemon.Descripcion;
                     txt_Img.Text = Pokemon.UrlImagen;
@@ -146,6 +161,60 @@ namespace WindowsFormsPrimeraLecturaDBPágina
 
                 
             
+            }
+        }
+        private bool validarcampos()
+        {
+
+            bool ok = true;
+ 
+
+            if (txt_numero.Text == "")
+            {
+
+                ok = false;
+                errorProvider.SetError(txt_numero, "Ingresar Codigo");
+            }
+            if (txt_nombre.Text == "")
+            {
+                ok = false;
+                errorProvider.SetError(txt_nombre, "Ingresar Nombre");
+            }
+            if (txt_descripcion.Text == "")
+            {
+                ok = false;
+                errorProvider.SetError(txt_descripcion, "Ingresar Descripcion");
+            }
+            if (txt_Img.Text == "")
+            {
+                ok = false;
+                errorProvider.SetError(txt_Img, "Ingresar Url de Imagen");
+            }
+
+            return ok;
+        }
+        private void limpiarCamposProvider()
+        {
+            errorProvider.SetError(txt_numero, "");
+            errorProvider.SetError(txt_nombre, "");
+            errorProvider.SetError(txt_descripcion, "");
+            errorProvider.SetError(txt_Img, "");
+        }
+
+        private void limpiarCampos(Control control)
+        {
+            foreach (Control txt in control.Controls)
+            {
+                if (txt is TextBox)
+                {
+                    ((TextBox)txt).Clear();
+                }
+                else if (txt is ComboBox)
+                {
+
+                    ((ComboBox)txt).SelectedItem = -1;
+                }
+
             }
         }
     }
