@@ -7,7 +7,7 @@ El proyecto de Pokédex es una aplicación de escritorio desarrollada en C# util
 ## Características Clave
 
 - **Interfaz de Usuario Amigable:** Diseñada con Windows Forms para una experiencia de usuario intuitiva y fácil de usar.
-- **Conexión a Base de Datos:** Utiliza ADO.NET para conectarse a una base de datos (puede ser SQL Server o SQLite) donde se almacenan los detalles de los Pokémon.
+- **Conexión a Base de Datos:** Utiliza ADO.NET para conectarse a una base de datos (SQL Server) donde se almacenan los detalles de los Pokémon.
 - **Operaciones CRUD:**
   - **Crear:** Permite agregar nuevos Pokémon al catálogo proporcionando información como nombre, tipo, habilidades, etc.
   - **Leer:** Muestra una lista de Pokémon que permite a los usuarios buscar y visualizar los Pokémon existentes. Además, los usuarios pueden hacer clic en un Pokémon para ver más detalles.
@@ -41,7 +41,8 @@ Para ejecutar la aplicación en tu propio entorno de desarrollo, sigue estos pas
 1. Clona o descarga el repositorio a tu computadora.
 2. Abre la solución en Visual Studio.
 3. El Scrip de la Bd esta en una carpeta Negocio/Scrip_Db/Pokemon.sql.
-4. Compila y ejecuta el proyecto.
+4. Abrir Sql Server y ejecutar el script en una New Query.
+5. Compila y ejecuta el proyecto.
 
 
 ## Tecnologías Utilizadas
